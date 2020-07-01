@@ -20,7 +20,6 @@ function startQuiz() {
         timerId = setInterval(clockTick, 1000);
         timerEl.textContent = time;
         getQuestion();
-
         }
 
 function clockTick(){
@@ -33,7 +32,7 @@ function clockTick(){
 
 function getQuestion() {
     var currentQuestion = questions[currentQuestionsIndex];
-    var titleEl = document.getElementById("questions-title");
+    var titleEl = document.getElementById("question-title");
     titleEl.textContent = currentQuestion.title;
     choicesEl.innerHTML = "";
         currentQuestion.choices.forEach(function(choice){
@@ -58,7 +57,6 @@ function questionClick() {
     }
     else {
         feedbackEl.textContent = "right";
-
     }  
     currentQuestionsIndex++;
     if(currentQuestionsIndex === questions.length){
@@ -73,8 +71,7 @@ function quizEnd() {
     clearInterval(timerId);
     // show end screen
     // show final score
-
 }
 
 //user clicks button to start quiz
-startBtn.onClick = startQuiz;
+startBtn.onclick = startQuiz;
