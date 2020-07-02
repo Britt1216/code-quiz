@@ -20,7 +20,5 @@ var questions = [
         choices: ["a", "b", "c", "d"],
         answer: "c"
     }
-
-
-    
+   
 ]
