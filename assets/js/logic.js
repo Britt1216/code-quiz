@@ -70,7 +70,18 @@ function questionClick() {
 function quizEnd() {
     clearInterval(timerId);
     // show end screen
+    
     // show final score
+
+    var userName = document.querySelector('#score-name').value.trim();
+    var finalScore = {
+        score: score,
+        name: userName
+    };
+    var hiScores = JSON.parse(window.localStorage.getItem('High Scores')) || [];
+    hiScores.push(finalScore);
+    window.localStorage.setItem('High Scores', JSON.stringify(hiScores));
+}
 }
 
 //user clicks button to start quiz
